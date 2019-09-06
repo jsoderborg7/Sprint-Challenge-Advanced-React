@@ -3,6 +3,7 @@ import React from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 import styled from 'styled-components';
 
+
 const NavBar = () => {
   const [darkMode, setDarkMode] = useDarkMode(false);
   const toggleMode = e => {
@@ -35,16 +36,6 @@ const StyledNavBar = styled.div `
 
 .navbarContainer{
 
-  h1{
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  h2{
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
   .navbar{
     background-color: #edf2ee;
     opacity: .9; 
@@ -53,10 +44,24 @@ const StyledNavBar = styled.div `
     height: 5%;
     justify-content: space-between;
     width: 100%;
+
+    .dark-mode{
+      background-color: #677e22;
+      color: #edf2ee;
   }
 
   .title{
     width: 100%;
+
+    h1{
+      font-size: 3rem;
+      text-align: center;
+    }
+  
+    h2{
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
 
   .dark-mode__toggle {

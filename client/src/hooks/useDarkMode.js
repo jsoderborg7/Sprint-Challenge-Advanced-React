@@ -8,8 +8,10 @@ const useDarkMode = (initialValue) =>{
   useEffect(() =>{
     if (darkMode){
       document.body.classList.add('dark-mode')
+      document.querySelector('.navbarContainer').classList.add('dark-mode')
     }else {
       document.body.classList.remove('dark-mode')
+      document.querySelector('.navbarContainer').classList.remove('dark-mode')
     }
   }, [darkMode])
 
