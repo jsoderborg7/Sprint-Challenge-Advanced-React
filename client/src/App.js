@@ -4,6 +4,7 @@ import axios from 'axios';
 import PlayerList from './components/PlayerList';
 import styled from 'styled-components';
 import Logo from './images/World-Cup-Logo.png';
+import StickyBox from 'react-sticky-box';
 
 export default class App extends Component {
 
@@ -40,7 +41,6 @@ export default class App extends Component {
             <h2>Ranked by Search Interest June-July 2019</h2>
           </div>
           <div className="middleContent">
-            <img src={Logo} alt="Women's World Cup Logo 2019"/>
             <div>
               {this.state.playerData.map(player =>{
                 return <PlayerList
@@ -75,23 +75,6 @@ const StyledApp = styled.div `
     h2{
       font-size: 1.5rem;
       text-align: center;
-    }
-
-    .middleContent{
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-
-      img{
-        height: 100%;
-        padding: 5%;
-        margin: 1%;
-        background-color: #edf2ee;
-        opacity: .8;
-        border-radius: 10px;
-        box-shadow: 5px 5px 5px 0:
-      }
-
     }
   }
 `;

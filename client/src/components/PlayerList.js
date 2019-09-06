@@ -23,12 +23,14 @@ const PlayerList = (props) =>{
 const StyledPlayerList = styled.div `
   .listContainer{
     width: 45%;
+    margin: auto;
     background-color: #edf2ee;
     opacity: .8;
     border-radius: 10px;
     padding: 3%;
     text-align: center;
-    margin: 5%;
+    margin-top: 5%;
+    
 
 
     .playerName{
