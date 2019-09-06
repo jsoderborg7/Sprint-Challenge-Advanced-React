@@ -1,18 +1,22 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Image } from 'semantic-ui-react';
 import styled from 'styled-components';
+import Ball from '../images/SoccerBall.png';
 
 const PlayerList = (props) =>{
   return(
     <StyledPlayerList>
       <div>
         <List className="listContainer">
-          <List.Item>
-            <List.Content>
-              <List.Header className="playerName">{props.name}</List.Header>
-              <List.Description className="playerCountry">Country: {props.country}</List.Description>
-              <List.Description className="playerSearches">Number of Searches: {props.searches}</List.Description>
-            </List.Content>
+          <List.Item className="items">
+            <Image className="image" src={Ball} alt="Soccer Ball"/>
+            <div>
+              <List.Content>
+                <List.Header className="playerName">{props.name}</List.Header>
+                <List.Description className="playerCountry">Country: {props.country}</List.Description>
+                <List.Description className="playerSearches">Number of Searches: {props.searches}</List.Description>
+              </List.Content>
+            </div>
           </List.Item>
         </List>
       </div>
@@ -30,6 +34,15 @@ const StyledPlayerList = styled.div `
     padding: 3%;
     text-align: center;
     margin-top: 5%;
+
+    .items{
+      display: flex;
+      align-items: center;
+
+      .image{
+        width: 35%;
+      }
+    }
 
     .playerName{
       font-size: 2.5rem;

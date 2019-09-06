@@ -2,6 +2,7 @@
 import React from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 import styled from 'styled-components';
+import Logo from '../images/World-Cup-Logo.png';
 
 
 const NavBar = () => {
@@ -14,6 +15,7 @@ const NavBar = () => {
     <StyledNavBar> 
       <div className="navbarContainer">
         <nav className="navbar">
+          <img src={Logo} alt="Women's World Cup Logo 2019"/>
           <div className="title">
             <h1>Women's World Cup Players</h1>
             <h2>Ranked by Search Interest June-July 2019</h2>
@@ -45,11 +47,9 @@ const StyledNavBar = styled.div `
     justify-content: space-between;
     width: 100%;
 
-    .dark-mode{
-      background-color: #677e22;
-      color: #edf2ee;
-  }
-
+    img{
+      padding-left: 5%;
+    }
   .title{
     width: 100%;
 
