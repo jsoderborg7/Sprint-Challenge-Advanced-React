@@ -3,8 +3,7 @@ import './App.css';
 import axios from 'axios';
 import PlayerList from './components/PlayerList';
 import styled from 'styled-components';
-import Logo from './images/World-Cup-Logo.png';
-import StickyBox from 'react-sticky-box';
+import NavBar from './components/NavBar';
 
 export default class App extends Component {
 
@@ -36,12 +35,8 @@ export default class App extends Component {
     return(
       <StyledApp>
         <div className="App">
-          <div className="title">
-            <h1>Women's World Cup Players</h1>
-            <h2>Ranked by Search Interest June-July 2019</h2>
-          </div>
+          <NavBar />
           <div className="middleContent">
-            <div>
               {this.state.playerData.map(player =>{
                 return <PlayerList
                   name={player.name}
@@ -50,7 +45,6 @@ export default class App extends Component {
                   key={player.id}
                 />
               })}
-            </div>
           </div>
         </div>
       </StyledApp>
@@ -61,20 +55,6 @@ export default class App extends Component {
 const StyledApp = styled.div `
   .App{
 
-    .title{
-      background-color: #edf2ee
-      opacity: .8;
-      padding: 3%;
-    }
-    
-    h1{
-      font-size: 3rem;
-      text-align: center;
-    }
 
-    h2{
-      font-size: 1.5rem;
-      text-align: center;
-    }
   }
 `;

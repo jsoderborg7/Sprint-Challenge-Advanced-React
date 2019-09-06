@@ -30,8 +30,6 @@ const StyledPlayerList = styled.div `
     padding: 3%;
     text-align: center;
     margin-top: 5%;
-    
-
 
     .playerName{
       font-size: 2.5rem;
