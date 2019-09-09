@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
+import PlayerList from './components/PlayerList';
+import styled from 'styled-components';
+import NavBar from './components/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      playerData: []
+    }
+  }
+
+  componentDidMount(){
+    this.getPlayer();
+  }
+
+  getPlayer = () =>{
+    axios
+      .get(`http://localhost:5000/api/players`)
+      .then(res =>{
+        console.log(res.data);
+        const playerData = res.data;
+        this.setState({playerData})
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+  }
+
+  render(){
+    return(
+      <StyledApp>
+        <div className="App">
+          <NavBar />
+          <div className="middleContent">
+              {this.state.playerData.map(player =>{
+                return <PlayerList
+                  name={player.name}
+                  country={player.country}
+                  searches={player.searches}
+                  key={player.id}
+                />
+              })}
+          </div>
+        </div>
+      </StyledApp>
+    )
+  }
 }
 
-export default App;
+const StyledApp = styled.div `
+  .App{
+
+
+  }
+`;
